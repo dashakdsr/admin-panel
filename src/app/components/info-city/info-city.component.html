@@ -1,0 +1,16 @@
+<div class="city-wrapper">
+  <button mat-button color="primary" (click)="addCity()"></button>
+  <p *ngIf="!cities.length">
+    No results
+  </p>
+  <div class="wrapper-content" *ngIf="cities.length">
+    <ng-template *ngFor="let item of cities; let index">
+      <p>
+        {{index + 1}}
+      </p>
+      <p>
+        {{item.name}}
+      </p>
+    </ng-template>
+  </div>
+</div>

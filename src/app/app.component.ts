@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {
+  Router
+} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'admin-panel';
+
+  constructor (
+    private router: Router
+  ) {}
+
+  navigateTo (route) {
+    this.router.navigateByUrl(`${route}`);
+  }
 }

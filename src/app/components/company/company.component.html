@@ -1,0 +1,16 @@
+<div class='company-wrapper'>
+  <button mat-button color="primary" (click)="addCompany()"></button>
+  <p *ngIf="!companies.length">
+    No results
+  </p>
+  <div class="wrapper-content" *ngIf="companies.length">
+    <ng-template *ngFor="let item of companies; let index">
+      <p>
+        {{index + 1}}
+      </p>
+      <p>
+        {{item.name}}
+      </p>
+    </ng-template>
+  </div>
+</div>

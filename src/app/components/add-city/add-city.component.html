@@ -1,0 +1,46 @@
+<div class="add-city-wrapper">
+  <mat-form-field *ngIf="countries.length">
+    <mat-label>Select country: </mat-label>
+    <mat-select>
+      <mat-option *ngFor="let country of countries" [value]="country.id">
+        {{country.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="add-discount">
+    <label>Enter the name of discount: </label>
+    <input placeholder="Title"/>
+    <label>Enter the description: </label>
+    <input placeholder="Description"/>
+    <mat-form-field *ngIf="companies.length">
+      <mat-label>Select company: </mat-label>
+      <mat-select>
+        <mat-option *ngFor="let company of companies" [value]="company.id">
+          {{company.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="add-tip">
+    <mat-checkbox>General</mat-checkbox>
+    <input/>
+    <mat-checkbox>Shopping</mat-checkbox>
+    <input/>
+    <mat-checkbox>Sightseeing</mat-checkbox>
+    <input/>
+    <mat-checkbox>Cafe</mat-checkbox>
+    <input/>
+  </div>
+  <div class="add-trip">
+    <div *ngFor="let item of trips">
+      <label>Enter the name: </label>
+      <input/>
+      <label>Enter the description: </label>
+      <input/>
+      <agm-map [latitude]="lat" [longitude]="lng">
+        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+      </agm-map>
+    </div>
+    <button>Add one more</button>
+  </div>
+</div>
